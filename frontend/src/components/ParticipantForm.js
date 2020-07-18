@@ -29,6 +29,7 @@ function ParticipantForm(props) {
     setIsInsured,
     setFirstName,
     setDateOfBirth,
+    isDisabled,
   } = props
 
   return (
@@ -37,7 +38,7 @@ function ParticipantForm(props) {
         <PrevPointHeading>1. Participant Information</PrevPointHeading>
       </Grid>
       <Grid item xs={12} sm={6}>
-        <FormControl>
+        <FormControl disabled={isDisabled}>
           <InputLabel htmlFor="firstName">First Name</InputLabel>
           <PrevPointInput
             id="firstName"
@@ -49,7 +50,7 @@ function ParticipantForm(props) {
         </FormControl>
       </Grid>
       <Grid item xs={12} sm={6}>
-        <FormControl>
+        <FormControl disabled={isDisabled}>
           <InputLabel htmlFor="lastName">Last Name</InputLabel>
           <PrevPointInput
             id="lastName"
@@ -63,6 +64,7 @@ function ParticipantForm(props) {
       <Grid item xs={12} sm={6}>
         <TextField
           label="Date of Birth"
+          disabled={isDisabled}
           name="dob"
           type="date"
           required
@@ -75,7 +77,7 @@ function ParticipantForm(props) {
         />
       </Grid>
       <Grid item xs={12} sm={6}>
-        <FormControl>
+        <FormControl disabled={isDisabled}>
           <InputLabel htmlFor="uuid">UUID</InputLabel>
           <PrevPointInput
             name="uuid"
@@ -86,7 +88,7 @@ function ParticipantForm(props) {
         </FormControl>
       </Grid>
       <Grid item xs={12} sm={6}>
-        <FormControl>
+        <FormControl disabled={isDisabled}>
           <InputLabel id="race">Select Race</InputLabel>
           <Select
             required
@@ -104,7 +106,7 @@ function ParticipantForm(props) {
         </FormControl>
       </Grid>
       <Grid item xs={12} sm={6}>
-        <FormControl>
+        <FormControl disabled={isDisabled}>
           <InputLabel id="participant-gender">Select Gender</InputLabel>
           <Select
             required
@@ -122,7 +124,7 @@ function ParticipantForm(props) {
         </FormControl>
       </Grid>
       <Grid item xs={12} sm={6}>
-        <FormControl component="fieldset">
+        <FormControl disabled={isDisabled} component="fieldset">
           <FormLabel component="legend">Has Insurance?</FormLabel>
           <RadioGroup
             aria-label="insurance"
@@ -139,7 +141,7 @@ function ParticipantForm(props) {
         </FormControl>
       </Grid>
       <Grid item xs={12} sm={6}>
-        <FormControl>
+        <FormControl disabled={isDisabled}>
           <InputLabel id="insurance-select">Select Insurance</InputLabel>
           <Select
             name="insurance"
@@ -164,6 +166,7 @@ function ParticipantForm(props) {
 
 ParticipantForm.propTypes = {
   participantInfo: PropTypes.object,
+  isDisabled: PropTypes.bool,
   insurers: PropTypes.array,
   setRace: PropTypes.func,
   setPPId: PropTypes.func,
@@ -173,6 +176,10 @@ ParticipantForm.propTypes = {
   setIsInsured: PropTypes.func,
   setFirstName: PropTypes.func,
   setDateOfBirth: PropTypes.func,
+}
+
+ParticipantForm.defaultProps = {
+  isDisabled: false,
 }
 
 export default ParticipantForm

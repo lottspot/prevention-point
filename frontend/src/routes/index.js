@@ -6,7 +6,7 @@ import LoginForm from "../views/LoginForm"
 import MainLayout from "../layouts/MainLayout"
 import ParticipantList from "../views/ParticipantList"
 import AllQueues from "../views/AllQueues"
-import ParticipantInfo from "../components/ParticipantInfo"
+import ExistingParticipantView from "../views/ExistingParticipantView"
 import NewParticipantView from "../views/NewParticipantView"
 
 const Routes = () => {
@@ -24,8 +24,8 @@ const Routes = () => {
           />
           <PrivateRoute
             exact
-            path="/participantInfo"
-            component={ParticipantInfo}
+            path="/existingParticipant"
+            component={ExistingParticipantView}
           />
           <PrivateRoute
             exact
