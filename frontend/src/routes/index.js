@@ -23,7 +23,6 @@ const Routes = () => {
             component={ParticipantList}
           />
           <PrivateRoute
-            exact
             path="/existingParticipant"
             component={ExistingParticipantView}
           />
