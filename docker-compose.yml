@@ -15,6 +15,10 @@ services:
       - db
     environment:
       - DJANGO_SETTINGS_MODULE=core.settings.docker
+    expose:
+      - 8000
+    labels:
+      civic-cloud.route: prevention-point.phl.io/api
   client:
     build: ./frontend
     ports:
